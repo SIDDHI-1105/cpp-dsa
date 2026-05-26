@@ -30,7 +30,7 @@ if(cmp(s1,s2)){
 
 }
 else{
-    cout<<" deek's marks are less";
+    cout<<" deek's marks are lesser than sid";
 }
 
     return 0;
