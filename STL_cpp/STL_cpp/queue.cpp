@@ -7,10 +7,7 @@ int main() {
     q.push(2);
     q.push(4);
     cout << q.front() << endl; // First element → 1
-        cout << q.back() << endl;
-
-   cout<< q.size()<<endl;
-    q.pop();                // Remove front
+    q.pop();                   // Remove front
+    cout << q.front() << endl; // Now front → 2
     return 0;
-
 }
