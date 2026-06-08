@@ -1,18 +1,16 @@
 #include <iostream>
 using namespace std;
-int n = 8;
+int n = 4;
 int main(){
-    for(int i = 0 ; i < n/2; i++){
-        for(int j = 0; j <= i; j++){
+    for(int i = 0 ; i < 2*n-1; i++){
+        int star = i;
+        if(i >= n) star = 2*n - i - 2;
+        for(int j = 1; j <= star; j++){
             cout << "*" ;
         }
-    // for(int i = 4 ; i < n i--){
-    //     for(int j = 0; j <= i; j++){
-    //         cout << "*" ; 
-    //     }  
-    // }
-    cout<< endl;   
+            cout<< endl;   
+    }
+      
     }
 
-}
 
