@@ -21,7 +21,11 @@ cout << "key found" << endl;
 else{
     cout << "not foud" << endl;
 }
-    for(auto it: ump) {
+if(ump.count(1) == 0){
+    cout << "not found" << endl;
+}   
+
+for(auto it: ump) {
         cout << it.first << " -> " << it.second << endl;
     }
     ump.find(1);
