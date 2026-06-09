@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
 
-int n = 5;
-
 int main(){
-for(int i = 0 ; i < n ; i ++ ) {
-    char ch = 'A' + i ;
-    for(int j = 0 ; j <= i ; j++ ){
-        cout << ch << " ";
-         
+    for(int i = 0; i<4 ; i++){
+    for(int j = 0; j<4; j++){
+    cout<<"*";
+
+    }
+    cout<<endl;
+    }
+
 }
-cout << endl;
-}}
+
+
+
