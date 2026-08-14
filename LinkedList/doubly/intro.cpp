@@ -78,6 +78,45 @@ void insertattail(Node* &head,Node* &tail, int d) {
 
 }
 
+void insertatanyposition(Node* &head, Node* &tail, int position, int d) {
+    int cnt = 0;
+    // Insert at head
+    if (position == 1) {
+        insertathead(head, d);
+        return;
+    }
+
+    Node* temp = head;
+    while (cnt < position - 1 && temp != NULL) {
+        temp = temp->next;
+        cnt++;
+    }
+
+    // If we reached the end of the list, insert at tail
+    if (temp == NULL) {
+        insertattail(head, tail, d);
+        return;
+    }
+
+    // Create a new node
+    Node* newNode = new Node(d);
+
+    // Insert in between nodes
+    newNode->next = temp->next;
+    newNode->prev = temp;
+
+    if (temp->next != NULL) {
+        temp->next->prev = newNode;
+    }
+    
+    temp->next = newNode;
+
+    // Update tail if we inserted at the end
+    if (newNode->next == NULL) {
+        tail = newNode;
+    }
+}
+
 int main() {
 
     // Create first node
@@ -88,8 +127,8 @@ int main() {
     Node* head = node1;
     Node* tail = node3;
 
-node1->next = node2;
-node2->prev = node1;
+    node1->next = node2;
+    node2->prev = node1;
 
 node2->next = node3;
 node3->prev = node2;
@@ -104,9 +143,16 @@ node3->prev = node2;
 
     insertattail(head, tail, 40);
 
+
     // Print updated list
     cout << "After inserting at head & tail: ";
     printfn(head);
+
+    insertatanyposition(head, tail, 3, 25);
+    
+    cout << "After inserting at a specific position: ";
+    printfn(head);
+
 
     // Print original node's data
     cout << "node1 data: " << node1->data << endl;
