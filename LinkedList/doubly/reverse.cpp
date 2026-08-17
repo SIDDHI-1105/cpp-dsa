@@ -20,14 +20,20 @@ void printList(Node* head)
 Node* reverseList(Node* &head)
 {
 Node* current = head;
+Node* newhead = NULL;
 
 while(current != NULL){
     Node* temp = current->next;
-current -> prev = current->next;
-temp = current->prev;
+    current ->next = current->prev;
+    current->prev = temp;
+
+    newhead = current;
+
+    current = current->prev;
+
 }
-   current = current->prev;
-   head = current;
+head = newhead;
+    return head;
 }
 
 int main()
@@ -61,6 +67,8 @@ int main()
     cout<<"Original List: ";
     printList(head);
 
+    cout<<endl;
+    
     reverseList(head);
 
     cout<<"Reversed List: ";
