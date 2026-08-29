@@ -4,15 +4,19 @@ using namespace std;
 
 
 int sum(int n){
-    if(n == 0)
-        return 0;       
-    else  
-        return n + sum(n - 1);
+if(n == 0){
+return 0;
+}
+return n + sum(n-1);
 
 }
 
 int main(){
-    int sums = sum(95);
-    cout << sums << endl;
+  cout << "enter n" << endl;
+  int n;
+  cin >> n;
+
+ cout << sum( n);
+
     return 0;
 }

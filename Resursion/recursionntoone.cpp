@@ -1,16 +1,13 @@
 #include<iostream>
 using namespace std;
 
-void oneton(int n){
+void ntoone(int n){
     if( n == 0){
         return;
     }
-   
-    oneton(n-1);
-     cout << n << " ";
+    cout << n << " ";
+    ntoone(n-1);
 }
-
-
 
 
 int main(){
@@ -18,7 +15,7 @@ cout << " enter n " << endl;
 int n ;
 cin >> n;
 
-oneton(n);
+ntoone(n);
 
     return 0;
 }

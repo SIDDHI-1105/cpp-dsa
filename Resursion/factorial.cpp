@@ -4,14 +4,17 @@ using namespace std;
 
 
 int fact(int n){
-    if(n == 0)
+    if(n == 0){
         return 1;
-        return fact(n - 1) * n;
+    }
+return fact(n-1)*n;
     }
    
 
 int main(){
-    int r = fact(5);
-    cout << r << endl;
-    return 0;
+cout <<" enter n" << endl;
+int n;
+cin >> n;
+
+cout << fact(n);
 }
